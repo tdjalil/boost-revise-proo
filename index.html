@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Boost Révise – Prototype</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Boost Révise</h1>
+    <nav>
+      <button id="nav-home">Accueil</button>
+      <button id="nav-create">Créer une fiche</button>
+      <button id="nav-quiz">Quiz</button>
+      <button id="nav-dashboard">Mon tableau</button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- Home -->
+    <section id="home" class="view">
+      <h2>Bienvenue — Révise malin</h2>
+      <p>Choisis une matière et un chapitre. L'app te donne une fiche de révision et un quiz.</p>
+      <div class="quick">
+        <select id="home-matiere">
+          <option>Français</option>
+          <option>Maths</option>
+          <option>Histoire</option>
+          <option>Anglais</option>
+        </select>
+        <input id="home-chap" placeholder="Chapitre (ex : Les temps du passé)" />
+        <button id="home-generate">Générer fiche</button>
+      </div>
+      <div id="home-result"></div>
+    </section>
+
+    <!-- Create -->
+    <section id="create" class="view hidden">
+      <h2>Créer une fiche</h2>
+      <label>Matière <input id="create-matiere" value="Maths" /></label>
+      <label>Chapitre <input id="create-chap" value="Pythagore" /></label>
+      <label>Niveau
+        <select id="create-niveau">
+          <option>Collège</option>
+          <option>Lycée</option>
+        </select>
+      </label>
+      <div class="actions">
+        <button id="create-generate">Générer avec modèle (local)</button>
+        <button id="create-generate-ai">Générer avec IA (option)</button>
+      </div>
+      <div id="create-result"></div>
+    </section>
+
+    <!-- Quiz -->
+    <section id="quiz" class="view hidden">
+      <h2>Quiz</h2>
+      <div id="quiz-area"></div>
+      <button id="quiz-start">Commencer quiz sur dernière fiche</button>
+    </section>
+
+    <!-- Dashboard -->
+    <section id="dashboard" class="view hidden">
+      <h2>Mon tableau</h2>
+      <div id="saved-list"></div>
+      <button id="export-json">Exporter mes fiches (JSON)</button>
+    </section>
+  </main>
+
+  <footer>
+    <small>Prototype – Boost Révise</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
